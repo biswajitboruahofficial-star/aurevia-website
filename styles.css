@@ -93,38 +93,34 @@ h1{font-size:clamp(44px,5.4vw,72px);line-height:1.08;letter-spacing:-.055em;font
 @media(max-width:850px){.nav{gap:16px}.hero{grid-template-columns:1fr 0.8fr;gap:5px}.hero-art{transform:scale(.85);margin:0 -30px}.services-grid{grid-template-columns:repeat(2,1fr)}.about-section{gap:35px}.portal-panel{gap:25px;padding:26px}.section-heading{align-items:start}.section-heading>p{max-width:300px}}
 @media(max-width:650px){.site-header{height:72px;padding:0 18px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:71px;left:12px;right:12px;padding:15px;background:rgba(9,22,15,.97);border:1px solid var(--line);border-radius:13px;flex-direction:column;align-items:stretch;gap:0;box-shadow:0 20px 40px rgba(0,0,0,.35)}.nav.open{display:flex}.nav a{padding:12px}.nav .nav-cta{text-align:center;margin-top:6px}.section-wrap{padding-left:18px;padding-right:18px}.hero{display:flex;flex-direction:column;align-items:stretch;padding-top:55px;padding-bottom:35px;gap:0}.hero-copy{position:relative;z-index:2}.hero h1{font-size:clamp(43px,12vw,61px)}.hero-lead{font-size:14px}.hero-art{height:330px;transform:scale(.83);transform-origin:top center;margin:15px -25px -30px}.orbit-outer{width:360px}.float-card-top{right:0;top:25px}.float-card-bottom{bottom:30px}.section{padding-top:75px;padding-bottom:75px}.section-heading{display:block;margin-bottom:26px}.section-heading>p{margin-top:16px}.project-grid{grid-template-columns:1fr}.project-visual{height:245px}.project-info p{min-height:0}.services-grid{gap:10px}.service-card{padding:18px 14px;min-height:200px}.service-card h3{font-size:14px}.service-card p{font-size:10px}.about-section{grid-template-columns:1fr;gap:32px}.about-visual{height:280px}.about-monogram{font-size:125px}.about-copy h2{font-size:34px}.portal-section{padding-top:0;padding-bottom:75px}.portal-panel{grid-template-columns:1fr;padding:22px;gap:15px}.portal-copy h2{font-size:34px}.contact-section{padding-top:0}.contact-grid{grid-template-columns:1fr;gap:20px}.contact-form{padding:18px}.footer-main{flex-wrap:wrap;gap:14px}.footer-main>p{width:100%;order:3}.back-top{font-size:9px}.footer-bottom{font-size:8px}.ticker div{text-align:left;padding-left:20px}}
 @media(max-width:370px){.services-grid{grid-template-columns:1fr}.service-card{min-height:170px}.hero-actions .button{width:100%}.float-card{padding:10px}.float-card b{font-size:10px}}
-/* AUREVIA — Final Mobile Width Fix */
+/* AUREVIA — Stop Mobile Sideways Movement */
 @media screen and (max-width: 650px) {
-  html,
+  html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
   body {
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    margin: 0;
+    overflow-x: clip;
   }
 
-  .site-header {
-    width: 100%;
+  .site-header,
+  main,
+  .section-wrap,
+  .section,
+  .footer {
     max-width: 100%;
-    left: 0;
-    right: 0;
-  }
-
-  .section-wrap {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 18px;
-    padding-right: 18px;
+    min-width: 0;
   }
 
   .hero {
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
-  }
-
-  .hero-copy {
-    width: 100%;
-    max-width: 100%;
+    overflow: clip;
   }
 
   .hero-art {
@@ -132,32 +128,23 @@ h1{font-size:clamp(44px,5.4vw,72px);line-height:1.08;letter-spacing:-.055em;font
     max-width: 100%;
     margin: 15px 0 0;
     transform: none;
-    overflow: hidden;
+    overflow: clip;
   }
 
   .orbit-outer {
-    width: min(360px, 90vw);
-    max-width: 100%;
+    width: min(360px, 88vw);
   }
 
   .orbit-inner {
-    width: min(300px, 78vw);
-    max-width: 100%;
-  }
-
-  .hero-core {
-    width: min(205px, 58vw);
-    height: min(205px, 58vw);
+    width: min(300px, 76vw);
   }
 
   .float-card-top {
     right: 0;
-    max-width: 75%;
   }
 
   .float-card-bottom {
     left: 0;
-    max-width: 75%;
   }
 
   .ticker {
@@ -171,26 +158,6 @@ h1{font-size:clamp(44px,5.4vw,72px);line-height:1.08;letter-spacing:-.055em;font
   .about-section,
   .portal-panel,
   .contact-grid {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .project-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .portal-panel {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .contact-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .project-card,
-  .service-card,
-  .contact-form {
     min-width: 0;
     max-width: 100%;
   }
