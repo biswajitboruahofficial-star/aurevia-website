@@ -26,7 +26,7 @@ const CONTACT_EMAIL = 'REPLACE_WITH_YOUR_SUPPORT_EMAIL@example.com';
 document.getElementById('contactForm').addEventListener('submit', (event) => {
   event.preventDefault();
 
-  if (CONTACT_EMAIL.includes('REPLACE_WITH_YOUR_SUPPORT_EMAIL')) {
+  if (CONTACT_EMAIL.includes('biswajitboruahofficial@gmail.com')) {
     alert('Before using the contact form, the website owner must add the official support email in script.js.');
     return;
   }
